@@ -1,0 +1,17 @@
+PASSIVE RECON 
+    The act of obtaining information about a target without directly interacting with the target’s systems
+
+    - api endpoints
+    - api credentials 
+    - version information 
+    - api documentation
+    - api business purpose 
+
+
+
+GOOGLE DORKing
+    Parameterize your google search for more niche results 
+
+    EXAMPLE: 
+        "searching for urls with api in the name from coinbase.com"
+        - intitle:"api" site:"coinbase.com"
