@@ -9,9 +9,33 @@ PASSIVE RECON
 
 
 
+
+DETECTING APIS 
+    
+    - look for api url naming schemes
+        - ex: targetname.com/api/v1
+        - ex: api.targetname.com/v1
+
+    - http request and request/response headers 
+        - json or xml request/response
+        - headers containing content-type : application-json 
+        - headers containing content-type : application-xml 
+
+    - response containing {missing authorization token }
+
+
+
 GOOGLE DORKing
     Parameterize your google search for more niche results 
 
     EXAMPLE: 
         "searching for urls with api in the name from coinbase.com"
         - intitle:"api" site:"coinbase.com"
+
+
+
+
+
+USE GOOGLE DORK TO FIND API URLS
+    - intitle:"<keyword>" site:"<domain>"
+    - inurl:"/<endpoint>" site:"<domain>"
