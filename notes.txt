@@ -123,9 +123,23 @@ SHODAN DORKing
         - "hostname: <hostname>"
         - "os: <operating_system>"
 
+    
+    Useful Shodan Queries
+
+    -hostname:"targetname.com": Use this in combonation with other queries
+    - "content-type: application/json" : This query will filter results that respond with JSON.
+    - "content-type: application/xml" : This query will filter results that respond with XML.
+    - "200 OK" : Display responses with status codes
+    - "wp-json" : This will search for web applications using the WordPress API.
+
+
+
+
 WAYBACK MACHINE DORKing
     go back in a website's history to find old/removed information 
     https://web.archive.org/
+
+    Zombie APIs fall under the Improper Assets Management vulnerability on the OWASP API Security Top 10 list
 
     Useful ideas:
         Usernames and Emails: Forum leaks or Old Wordpress /author/ pages
