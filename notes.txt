@@ -1,13 +1,15 @@
 PASSIVE RECON 
     The act of obtaining information about a target without directly interacting with the target’s systems
+    `OSINT to gather information about the target`
 
     - api endpoints
     - api credentials 
-    - version information 
+    - version information tells you outdated software
     - api documentation
     - api business purpose 
-
-
+    - business logic flaws
+    - api keys and tokens
+    - leaked PII like email addresses, phone numbers, etc.
 
 
 DETECTING APIS 
@@ -24,18 +26,74 @@ DETECTING APIS
     - response containing {missing authorization token }
 
 
+STRATEGIES FOR PASSIVE RECON 
+    - search engines 
+        - google dorking
+        - shodan.io
+        - censys.io
+        - binaryedge.io
+
+    - social media 
+        - twitter.com (x.com)
+        - github.com
+        - pastebin.com
+
+    - public repositories 
+        - github.com
+        - gitlab.com
+
+    - public data leaks 
+        - haveibeenpwned.com
+        - leakix.net
+
 
 GOOGLE DORKing
     Parameterize your google search for more niche results 
-
     EXAMPLE: 
-        "searching for urls with api in the name from coinbase.com"
-        - intitle:"api" site:"coinbase.com"
+        - intitle:"<keyword>" site:"<domain>"
+        - inurl:"/<endpoint>" site:"<domain>"
 
+GIT DORKing
+    - Searching github for sensitive information like api keys, secrets, tokens, etc.
+    - look at 
+        - repositories
+        - issues 
+        - comments 
+        - commit history 
+        - pull requests 
 
+    PARAMETERS FOR DORKing:
+        - path:/appsettings.json
+        - path:*/appsettings.json
+        - filename:appsettings.json
+        - extension:json "password" OR "secret" OR "token"
+        - filename:appsettings.json "ConnectionStrings"
+        - extension:json "private_key" OR "client_secret"
+        - path:*/config.json
+        - path:*/.env
+        - extension:json "aws_access_key_id"
+        - extension:json "Authorization" OR "access_token"
 
+    LOOK FOR:
+        - Common headers like "Authorization Bearer" or "X-Api-Key"
+        - Common tokens like "access_token" or "client_secret"
 
+    EXAMPLE FOR CHATGPT KEYS:
+        -"Authorization: Bearer sk-"
+        - OPENAI CHAT GPT keys always start with sk- and are 51 characters long
 
-USE GOOGLE DORK TO FIND API URLS
-    - intitle:"<keyword>" site:"<domain>"
-    - inurl:"/<endpoint>" site:"<domain>"
+SHODAN DORKing
+    - Shodan is a search engine for internet-connected devices and services
+    - It allows you to search for specific devices, services, or vulnerabilities based on various parameters
+
+    PARAMETERS FOR DORKing:
+        - "product: <product_name>"
+        - "version: <version_number>"
+        - "port: <port_number>"
+        - "country: <country_code>"
+        - "city: <city_name>"
+        - "hostname: <hostname>"
+        - "os: <operating_system>"
+
+WAYBACK MACHINE DORKing
+    
