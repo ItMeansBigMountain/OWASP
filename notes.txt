@@ -1,16 +1,46 @@
+i promise to write my notes for education and self improvement. AI can review and can help sort thoughts but my mind is powerful and I will use it thanks.
+
+Hacking an API steps: 
+    - Passive Recon: find as much information about your target's api attack surface
+    - Active Recon: 
+
+
+USEFUL SITES :
+    - 🕵️‍♂️ Wayback Machine (Site Archives)	https://web.archive.org/
+    - 🔎 Shodan (Device Search)	https://www.shodan.io/
+    - 🌐 Censys (Internet Scan Engine)	https://search.censys.io/
+    - 📡 BinaryEdge (Global Scanning)	https://app.binaryedge.io/
+    - 🌎 Google Dorking (via Google Search)	https://www.google.com/
+    - 🧠 GitHub (Git Dorking)	https://github.com/
+    - 🔍 GitLab (Public Repo Search)	https://gitlab.com/
+    - 🕳️ Pastebin (Leaked Data Search)	https://pastebin.com/
+    - 💀 LeakIX (Public Leak Scanner)	https://leakix.net/
+    - 📧 Have I Been Pwned (Email Breach Check)	https://haveibeenpwned.com/
+    - 🔥 crt.sh (Certificate Transparency Logs)	https://crt.sh/
+    - 📚 GitHub Gists (Hidden file searching)	https://gist.github.com/
+
+
+---
+
 PASSIVE RECON 
     The act of obtaining information about a target without directly interacting with the target’s systems
     `OSINT to gather information about the target`
+     "Here are 10 weak points before even sending a packet."
 
-    - api endpoints
-    - api credentials 
-    - version information tells you outdated software
-    - api documentation
-    - api business purpose 
-    - business logic flaws
-    - api keys and tokens
-    - leaked PII like email addresses, phone numbers, etc.
+    Search public data for 
+        - api endpoints
+        - api credentials 
+        - version information tells you outdated software
+        - api documentation
+        - api business purpose 
+        - business logic flaws
+        - api keys and tokens
+        - leaked PII like email addresses, phone numbers, etc.
 
+    Useful ideas:
+        -JS File Scraping:	Extract hidden API endpoints and keys from JavaScript files
+        -Google Cache & GitHub Gists:	Hidden backups accidentally indexed
+        -Metadata Extraction (EXIF):	Find leaks inside images/docs (tools like exiftool)
 
 DETECTING APIS 
     
@@ -24,7 +54,6 @@ DETECTING APIS
         - headers containing content-type : application-xml 
 
     - response containing {missing authorization token }
-
 
 STRATEGIES FOR PASSIVE RECON 
     - search engines 
@@ -45,7 +74,6 @@ STRATEGIES FOR PASSIVE RECON
     - public data leaks 
         - haveibeenpwned.com
         - leakix.net
-
 
 GOOGLE DORKing
     Parameterize your google search for more niche results 
@@ -96,4 +124,16 @@ SHODAN DORKing
         - "os: <operating_system>"
 
 WAYBACK MACHINE DORKing
-    
+    go back in a website's history to find old/removed information 
+    https://web.archive.org/
+
+    Useful ideas:
+        Usernames and Emails: Forum leaks or Old Wordpress /author/ pages
+        Internal Portal Links: Early versions of websites expose URLs to employee login portals or admin panels.	/admin/login.php discovered
+        Recover Exposed S3/Storage account blob Buckets: 	Find old hardcoded S3 URLs pointing to still-open buckets	Access to files, backups, internal data
+        JavaScript Files (.js)	Endpoint URLs, secrets, internal API calls
+
+---
+
+ACTIVE RECON 
+    You are touching the target, generating logs, and possibly triggering alerts.
