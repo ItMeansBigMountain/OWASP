@@ -132,9 +132,6 @@ SHODAN DORKing
     - "200 OK" : Display responses with status codes
     - "wp-json" : This will search for web applications using the WordPress API.
 
-
-
-
 WAYBACK MACHINE DORKing
     go back in a website's history to find old/removed information 
     https://web.archive.org/
@@ -151,3 +148,14 @@ WAYBACK MACHINE DORKing
 
 ACTIVE RECON 
     You are touching the target, generating logs, and possibly triggering alerts.
+    scan --> enum open ports ---> interact 
+    building out targets attack surface 
+
+    TOOLS TO USE :
+        - Nmap
+        - OWASP Amass
+        - Gobuster
+        - DevTools
+        - Kiterunner
+
+    

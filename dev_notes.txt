@@ -1,0 +1,30 @@
+DOCKER 
+    PRUNE ALL STOPPED CONTAINERS
+    - docker container prune -f
+
+    START DOCKER CONTAINERS with compose file
+    - docker compose pull
+    - docker compose -f docker-compose.yml --compatibility up -d
+
+
+NMAP 
+    SCAN IP ADDRESS
+    - nmap -sC -sV 192.168.1
+
+    FULL SWEEP SCAN
+    - nmap -sS -sV -O -p- 127.0.0.1
+
+
+AMASS 
+    A tool for active and passive recon on a web domain.
+    Active will contact the domains certificate authority (api calls)
+    Passive will search the internet for information about the deomain.
+
+    DOMAIN ENUMERATION
+    - amass enum -d example.com -o amass.txt
+
+    SUBDOMAIN ENUMERATION
+    - amass enum -d example.com -o amass.txt -src
+
+    BRUTEFORCE SUBDOMAINS
+    - amass enum -brute
