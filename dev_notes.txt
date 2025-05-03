@@ -20,11 +20,9 @@ AMASS
     Active will contact the domains certificate authority (api calls)
     Passive will search the internet for information about the deomain.
 
-    DOMAIN ENUMERATION
-    - amass enum -d example.com -o amass.txt
+    AMASS DATA SOURCE LIST  
+    - amass enum -list 
 
-    SUBDOMAIN ENUMERATION
-    - amass enum -d example.com -o amass.txt -src
-
-    BRUTEFORCE SUBDOMAINS
-    - amass enum -brute
+    GATHER ALL API URLS FROM DOMAIN
+    - amass enum -active -d 127.0.0.1:8888  | grep api
+    
