@@ -25,4 +25,8 @@ AMASS
 
     GATHER ALL API URLS FROM DOMAIN
     - amass enum -active -d 127.0.0.1:8888  | grep api
-    
+
+    VERBOSE OUTPUT SAVED IN LOG FILE
+    - amass enum -d example.com -v -log amass.log
+
+
